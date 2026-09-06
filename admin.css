@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #07101f;
+    color: white;
+}
+
+/* LOGIN */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 400px;
+    padding: 40px;
+    border-radius: 20px;
+    background: #111c30;
+}
+
+.login-box input {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+}
+
+.login-box button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    min-height: 100vh;
+}
+
+aside {
+    width: 250px;
+    padding: 25px;
+    background: #0b1628;
+}
+
+aside button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    border: 1px solid #334;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #16c7e8;
+    font-weight: bold;
+}
+
+#userForm {
+    max-width: 700px;
+}
+
+
+/* PROJECT */
+
+.project-item {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #101d31;
+    border-radius: 10px;
+}
+
+.project-item input,
+.project-item textarea {
+    margin-bottom: 10px;
+}
+
+.remove-project {
+    background: #d84b4b;
+}
+
+
+/* USER CARD */
+
+.user-card {
+    max-width: 700px;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #101d31;
+    border-radius: 10px;
+}
+
+.user-card a {
+    color: #16c7e8;
+}
