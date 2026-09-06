@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skywolf Studio - Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="login-page" id="loginPage">
+
+    <div class="login-box">
+
+        <h1>🐺 SKYWOLF STUDIO</h1>
+        <p>Admin Portal</p>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Admin Email"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <button onclick="login()">
+            Login
+        </button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+</div>
+
+
+<!-- ADMIN DASHBOARD -->
+
+<div class="dashboard" id="dashboard" style="display:none">
+
+    <aside>
+
+        <h2>🐺 SKYWOLF</h2>
+
+        <button onclick="showCreateUser()">
+            + Create User
+        </button>
+
+        <button onclick="loadUsers()">
+            Manage Users
+        </button>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main>
+
+        <div id="createUserSection">
+
+            <h1>Create Digital ID</h1>
+
+            <form id="userForm">
+
+                <div class="form-group">
+
+                    <label>Artist Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Mr. Pradeep Kumar"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Artist ID</label>
+
+                    <input
+                        type="text"
+                        id="artistId"
+                        placeholder="SW-DUB-005"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Profile Picture</label>
+
+                    <input
+                        type="file"
+                        id="profilePicture"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Voice Type</label>
+
+                    <select id="voiceType">
+
+                        <option value="">
+                            Select Voice Type
+                        </option>
+
+                        <option>Male - Deep</option>
+                        <option>Male - Normal</option>
+                        <option>Male - High</option>
+
+                        <option>Female - Deep</option>
+                        <option>Female - Normal</option>
+                        <option>Female - High</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Language</label>
+
+                    <input
+                        type="text"
+                        id="language"
+                        placeholder="Tamil"
+                    >
+
+                </div>
+
+
+                <!-- SOCIAL MEDIA -->
+
+                <h2>Social Media</h2>
+
+
+                <div class="form-group">
+
+                    <label>Instagram</label>
+
+                    <input
+                        type="url"
+                        id="instagram"
+                        placeholder="https://instagram.com/username"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>YouTube</label>
+
+                    <input
+                        type="url"
+                        id="youtube"
+                        placeholder="https://youtube.com/@channel"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Facebook</label>
+
+                    <input
+                        type="url"
+                        id="facebook"
+                        placeholder="https://facebook.com/username"
+                    >
+
+                </div>
+
+
+                <!-- PROJECTS -->
+
+                <h2>Projects</h2>
+
+                <div id="projectsContainer"></div>
+
+                <button
+                    type="button"
+                    class="add-project"
+                    onclick="addProject()"
+                >
+                    + Add Project
+                </button>
+
+
+                <br><br>
+
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+                    Create Digital ID
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+        </div>
+
+
+        <!-- USERS -->
+
+        <div
+            id="usersSection"
+            style="display:none"
+        >
+
+            <h1>Manage Digital IDs</h1>
+
+            <div id="usersList"></div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="supabase.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>
